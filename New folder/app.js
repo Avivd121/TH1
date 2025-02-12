@@ -3,7 +3,6 @@ const path = require("path");
 
 const app = express();
 
-// Middleware לקריאת JSON בבקשות POST/PUT
 app.use(express.json());
 
 const products = [
@@ -44,6 +43,11 @@ app.get("/products/:id", (req, res) => {
     return res.status(404).json({ message: "Product not found" });
   }
   res.json(product);
+});
+
+//מחזיר מסלול ראשי
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "assets", "main.html"));
 });
 
 // שרת קבצים סטטיים
