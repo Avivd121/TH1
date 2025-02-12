@@ -51,7 +51,7 @@ app.use(express.static(path.join(__dirname, "assets")));
 
 app.use((req, res) => {
   //send error
-  res.status(404).sendFile(path.join(__dirname, "assets", "main.html"));
+  res.sendFile(path.join(__dirname, "assets", "404.html"));
 });
 
 const PORT = 3000;
